@@ -30,6 +30,13 @@ app.delete('/boxers/:name', (req, res) => {
   res.status(200).send('Boxer deleted');   // Responde con un estado 200 (OK)
 });
 
+const exercises = require('./exercises');
+
+app.get('/exercises', (req, res) => {
+  res.json(exercises);
+});
+
+
 // Inicia el servidor en el puerto 3002
 app.listen(3002, () => {
   console.log('Server running on port 3002');
